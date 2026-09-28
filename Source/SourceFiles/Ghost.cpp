@@ -18,8 +18,8 @@ Ghost::Ghost(SDL_Renderer* Renderer, Board* MyBoard, const Tokens Token, const S
 	GhostColor(GhostColor),
 	CanUseDoor(false)
 {
-	GhostBodyTexture.LoadFromFile("Source/Textures/GhostBody32.png");
-	GhostEyesTexture.LoadFromFile("Source/Textures/GhostEyes32.png");
+	GhostBodyTexture.LoadFromFile("Assets/Textures/GhostBody32.png");
+	GhostEyesTexture.LoadFromFile("Assets/Textures/GhostEyes32.png");
 	InitFrames(GhostBodyFrames, 32, GhostBodySpriteClips);
 	InitFrames(GhostEyesFrames, 32, GhostEyesSpriteClips);
 	GhostBodyTexture.SetColor(GhostColor);

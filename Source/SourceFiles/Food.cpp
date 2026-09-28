@@ -12,8 +12,8 @@ Food::Food(SDL_Renderer* Renderer, Board* MyBoard, Pac* MyPac, Score* MyScore, L
 	MyFruit(Renderer, MyBoard, MyScore, MyLevel, TotalFood),
 	IsFoodSoundStarted(false)
 {
-	PelletTexture.LoadFromFile("Source/Textures/Pellet24.png");
-	EnergizerTexture.LoadFromFile("Source/Textures/Energizer24.png");
+	PelletTexture.LoadFromFile("Assets/Textures/Pellet24.png");
+	EnergizerTexture.LoadFromFile("Assets/Textures/Energizer24.png");
 }
 
 void Food::SelectCurrentFruit() {

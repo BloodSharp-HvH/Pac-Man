@@ -3,8 +3,8 @@
 GameStateMachine::GameStateMachine(SDL_Renderer* Renderer, Directions* Mover, bool* IsToRestart) :
 	InitIMG(IMG_Init(IMG_INIT_PNG)),
 	InitTTF(TTF_Init()),
-	Emulogic(TTF_OpenFont("Source/Fonts/Emulogic.ttf", StdBlockSize)),
-	VpPixel(TTF_OpenFont("Source/Fonts/VpPixel.ttf", StdBlockSize)),
+	Emulogic(TTF_OpenFont("Assets/Fonts/Emulogic.ttf", StdBlockSize)),
+	VpPixel(TTF_OpenFont("Assets/Fonts/VpPixel.ttf", StdBlockSize)),
 	IsToRestart(IsToRestart),
 	MyGameState(GameStates::Ready),
 	MyScore(Renderer, Emulogic),

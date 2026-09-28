@@ -6,7 +6,7 @@ Lives::Lives(SDL_Renderer* Renderer, Score* MyScore) :
 	LivesTexture(Renderer),
 	MyScore(MyScore)
 {
-	LivesTexture.LoadFromFile("Source/Textures/Lives32.png");
+	LivesTexture.LoadFromFile("Assets/Textures/Lives32.png");
 }
 
 Lives::~Lives(){

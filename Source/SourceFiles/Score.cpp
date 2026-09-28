@@ -50,7 +50,7 @@ unsigned int Score::Get() {
 
 void Score::InitHighScore() {
 	std::stringstream String;
-	std::ifstream HighScoreInput("Source/TextFiles/HighScore.txt");
+	std::ifstream HighScoreInput("Assets/TextFiles/HighScore.txt");
 	HighScoreInput >> HighScore;
 	String << HighScore;
 	MyTextures[2].LoadFromRenderedText(String.str(), Color::White, Font);
@@ -58,7 +58,7 @@ void Score::InitHighScore() {
 
 void Score::TermHighScore() {
 	std::ofstream HighScoreOutput;
-	HighScoreOutput.open("Source/TextFiles/HighScore.txt");
+	HighScoreOutput.open("Assets/TextFiles/HighScore.txt");
 	HighScoreOutput << HighScore;
 	HighScoreOutput.close();
 }

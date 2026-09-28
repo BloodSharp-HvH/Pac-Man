@@ -11,7 +11,7 @@ Pac::Pac(SDL_Renderer* Renderer, Directions* Mover, Board* MyBoard) :
 {
 	MoverPointer[0] = Directions::Right;
 	MoverPointer[1] = Directions::Right;
-	PacTexture.LoadFromFile("Source/Textures/Pac32.png");
+	PacTexture.LoadFromFile("Assets/Textures/Pac32.png");
 	InitFrames(PacFrames, 32, PacSpriteClips);
 	FrameTimer.Start();
 }

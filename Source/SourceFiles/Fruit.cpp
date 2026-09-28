@@ -13,9 +13,9 @@ Fruit::Fruit(SDL_Renderer* Renderer, Board* MyBoard, Score* MyScore, Level* MyLe
 	FruitTexture(Renderer),
 	FruitRect(GetFruitRect(MyBoard)),
 	FruitScoreTexture(Renderer),
-	FruitFont(TTF_OpenFont("Source/Fonts/VpPixel.ttf", StdBlockSize))
+	FruitFont(TTF_OpenFont("Assets/Fonts/VpPixel.ttf", StdBlockSize))
 {
-	FruitTexture.LoadFromFile("Source/Textures/Fruit32.png");
+	FruitTexture.LoadFromFile("Assets/Textures/Fruit32.png");
 	InitFrames(TotalFruits, 32, FruitSpriteClips);
 }
 

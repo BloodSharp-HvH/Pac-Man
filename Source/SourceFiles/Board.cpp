@@ -42,7 +42,7 @@ Board::Board(SDL_Renderer* Renderer) :
 	ActualSketch(DefaultSketch),
 	BoardTexture(Renderer)
 {
-	BoardTexture.LoadFromFile("Source/Textures/Board24.png");
+	BoardTexture.LoadFromFile("Assets/Textures/Board24.png");
 	BoardTexture.SetColor(Color::Blue);	
 }
 
