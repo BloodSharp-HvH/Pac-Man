@@ -12,13 +12,13 @@ namespace Sounds {
 			IntroChannel = 0, FoodChannel, FruitChannel, GhostFrightenedChannel, GhostEatenChannel, ExtraLifeChannel, PacDeathChannel, Total
 		};
 		static int TotalChannels = Mix_AllocateChannels(Channels::Total);
-		static Mix_Chunk* Intro = Mix_LoadWAV("Source/Sounds/Intro.wav");
-		static Mix_Chunk* Food = Mix_LoadWAV("Source/Sounds/Food.wav");
-		static Mix_Chunk* Fruit = Mix_LoadWAV("Source/Sounds/Fruit.wav");
-		static Mix_Chunk* GhostFrightened = Mix_LoadWAV("Source/Sounds/GhostFrightened.wav");
-		static Mix_Chunk* GhostEaten = Mix_LoadWAV("Source/Sounds/GhostDeath.wav");
-		static Mix_Chunk* ExtraLife = Mix_LoadWAV("Source/Sounds/ExtraLife.wav");
-		static Mix_Chunk* PacDeath = Mix_LoadWAV("Source/Sounds/PacDeath.wav");	
+		static Mix_Chunk* Intro = Mix_LoadWAV("Assets/Sounds/Intro.wav");
+		static Mix_Chunk* Food = Mix_LoadWAV("Assets/Sounds/Food.wav");
+		static Mix_Chunk* Fruit = Mix_LoadWAV("Assets/Sounds/Fruit.wav");
+		static Mix_Chunk* GhostFrightened = Mix_LoadWAV("Assets/Sounds/GhostFrightened.wav");
+		static Mix_Chunk* GhostEaten = Mix_LoadWAV("Assets/Sounds/GhostDeath.wav");
+		static Mix_Chunk* ExtraLife = Mix_LoadWAV("Assets/Sounds/ExtraLife.wav");
+		static Mix_Chunk* PacDeath = Mix_LoadWAV("Assets/Sounds/PacDeath.wav");	
 	}
 	static void Destructor(){
 		Mix_FreeChunk(Intro);
