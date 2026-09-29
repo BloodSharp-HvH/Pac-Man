@@ -11,4 +11,4 @@ Assets/TextFiles/
 *.dylib
 pacman*
 
-!SDL/**/*.dll
+!SDL/**/*
