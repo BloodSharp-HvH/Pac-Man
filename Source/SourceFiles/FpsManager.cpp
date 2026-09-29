@@ -1,7 +1,7 @@
 #include "FpsManager.hpp"
 
 FpsManager::FpsManager() :
-	FpsLimit(StdBlockSize * 6),
+	FpsLimit(StdBlockSize * 3),
 	IterationStart(0.0),
 	IterationEnd(0.0),
 	ElapsedSeconds(0.0),
