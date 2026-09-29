@@ -1,0 +1,44 @@
+SOURCES := Blinky.cpp Board.cpp Clyde.cpp Door.cpp Entity.cpp Food.cpp FpsManager.cpp Fruit.cpp Game.cpp GameInputs.cpp GameOver.cpp \
+	GameStateMachine.cpp Ghost.cpp GhostsManager.cpp GhostStateMachine.cpp Inky.cpp Level.cpp Lives.cpp Main.cpp Pac.cpp Pinky.cpp \
+	Ready.cpp Score.cpp Texture.cpp Timer.cpp
+
+PROJECT       := pacman
+TARGET        := $(PROJECT)
+BIN_DIR       := ../../
+TMP_ARCH_DIR  := ../../Release/WasmObj
+TMP_DIR       := $(TMP_ARCH_DIR)/$(PROJECT)
+DEFINES       := $(CONFIG)
+EMS			  := -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s USE_SDL_TTF=2 -s USE_SDL_MIXER=2 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -s NO_EXIT_RUNTIME=0 -s ASSERTIONS=1 -sSDL2_IMAGE_FORMATS='["png"]'
+LIBS          :=
+
+OBJECTS:= $(addprefix $(TMP_DIR)/, $(SOURCES:.cpp=.o))
+
+BIN_TARGET    := $(BIN_DIR)/$(TARGET).html
+
+CC            := emcc
+CXX           := em++
+LINK          := em++
+INCFLAGS	  := -I../HeaderFiles
+CFLAGS        := -O3 $(EMS)
+CXXFLAGS      := $(CXXFLAGS) $(CFLAGS) -std=c++17
+LFLAGS        := $(LFLAGS) -std=c++11 $(EMS) --preload-file ../../Assets@/Assets
+SDK_LIBS      := 
+SLIBFLAGS     := -crs
+COPY_FILE     := cp -f
+COPY_DIR      := cp -f -R
+
+DEL_FILE      := rm -f
+DEL_DIR       := rm -rf --
+
+
+all:: $(BIN_TARGET)
+
+clean: 
+	-$(DEL_FILE) $(OBJECTS)
+	-$(DEL_FILE) $(BIN_TARGET)
+
+$(BIN_TARGET): $(OBJECTS) $(OBJCOMP) $(DYLIBS)
+	$(LINK) $(LFLAGS) -o $(BIN_TARGET) $(OBJECTS) $(LIBS)
+
+$(TMP_DIR)/%.o: %.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCFLAGS) -o $(abspath $@) $(abspath $<)
