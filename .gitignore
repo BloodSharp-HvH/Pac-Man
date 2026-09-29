@@ -3,8 +3,12 @@ Debug/
 Release/
 x64/
 packages/
+Assets/TextFiles/
 
+*.exe
 *.dll
 *.so
 *.dylib
 pacman*
+
+!SDL/**/*.dll
