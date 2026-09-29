@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Sounds.hpp"
+#include "emscripten_mainloop_stub.hpp"
 
 Game::Game() :
 	InitSDL(SDL_Init(SDL_INIT_EVERYTHING)),
@@ -23,7 +24,12 @@ Game::~Game() {
 }
 
 void Game::Run() {
-	while (!Quit) {
+#ifdef __EMSCRIPTEN__
+	EMSCRIPTEN_MAINLOOP_BEGIN
+#else
+	while (!Quit)
+#endif
+	{
 		MyFpsManager.SetTime();
 		MyGameInputs.Get();
 		if(Quit) {
@@ -35,4 +41,7 @@ void Game::Run() {
 		MyFpsManager.CalculateDelay();
 		SDL_Delay(MyFpsManager.GetDelay());
 	}
+#ifdef __EMSCRIPTEN__
+	EMSCRIPTEN_MAINLOOP_END;
+#endif
 }
