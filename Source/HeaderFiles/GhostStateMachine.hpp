@@ -15,10 +15,10 @@ Sti cazzi:
 	if(IsHome && Direction::Down, fino a che non ha raggiunto il OuterHomeTarget)
 		EyeFrame = Down;
 - animazione dei fantasmi, nel momento in cui riappare il corpo.
-	Forse è dovuto al fatto che quando chiamo Reset() o Restart(), non stoppo il timer di aggiornamento dei frame
+	Forse ï¿½ dovuto al fatto che quando chiamo Reset() o Restart(), non stoppo il timer di aggiornamento dei frame
 */
 
-static constexpr enum class GhostStates {
+enum class GhostStates {
 	Chase = 0, Scatter, Frightened, Eaten
 };
 

@@ -11,7 +11,7 @@ constexpr int EntityBlockSize = StdBlockSize / 2 * 3;
 constexpr int FastFrameTime = 80;
 constexpr int SlowFrameTime = 140;
 
-constexpr enum class Directions {
+enum class Directions {
 	Up = 0, Left, Down, Right
 };
 
@@ -37,7 +37,7 @@ inline void InitFrames(int TextureFrames, int TextureBlockSize, SDL_Rect SpriteC
 	}
 }
 
-constexpr enum class Tokens : char {
+enum class Tokens : char {
 	Nothing = ' ',
 	Wall = '#',
 	Door = '=',

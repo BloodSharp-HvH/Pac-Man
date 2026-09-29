@@ -17,7 +17,7 @@
 #include "Food.hpp"
 #include "Sounds.hpp"
 
-constexpr enum class GameStates {
+enum class GameStates {
 	Ready = 0, GameStarted, LevelCompleted, PacDeath, GameOver
 };
 
